@@ -1,1 +1,43 @@
-<p>login works!</p>
+<div class="container d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+
+  <div class="card shadow-lg border-0" style="width: 100%; max-width: 400px;">
+    <div class="card-body p-5">
+
+      <div class="text-center mb-4">
+        <h2 class="fw-bold text-primary">Welcome Back</h2>
+        <p class="text-muted">Sign in to manage your budget</p>
+      </div>
+
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+
+        <div class="mb-3">
+          <label for="emailInput" class="form-label fw-bold">Email address <span class="text-danger">*</span></label>
+          <input type="email" class="form-control form-control-lg" id="emailInput" placeholder="name@example.com"
+                 required name="email" [(ngModel)]="email">
+        </div>
+
+        <div class="mb-4">
+          <label for="passwordInput" class="form-label fw-bold">Password <span class="text-danger">*</span></label>
+          <input type="password" class="form-control form-control-lg" id="passwordInput" placeholder="••••••••"
+                 required name="password" [(ngModel)]="password">
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold" [disabled]="loginForm.invalid">
+          Login
+        </button>
+
+      </form>
+
+      <hr class="my-4">
+
+      <div class="text-center">
+        <p class="mb-0 text-muted">
+          Don't have an account?
+          <a href="#" class="text-decoration-none fw-bold">Sign up here</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
