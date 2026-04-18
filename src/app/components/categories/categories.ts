@@ -27,7 +27,7 @@ export class Categories {
   }
 
   loadCategories() {
-    this.categoryService.getAllCategories().subscribe({
+    this.categoryService.getMyCategories().subscribe({
       next: (data: Category[]) => {
         this.categories = data;
         console.log('Data from database:', this.categories);

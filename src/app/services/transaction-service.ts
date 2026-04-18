@@ -11,20 +11,28 @@ export class TransactionService {
 
   constructor(private http: HttpClient) { }
 
-  getAllTransactions(): Observable<Transaction[]> {
-    return this.http.get<Transaction[]>(`${this.apiUrl}/alltransactions`);
+  getMyTransactions(): Observable<Transaction[]> {
+    return this.http.get<Transaction[]>(`${this.apiUrl}/my-transactions`);
   }
 
   createTransaction(transaction: Transaction): Observable<Transaction> {
-    return this.http.post<Transaction>(`${this.apiUrl}/newtransaction`, transaction);
+    return this.http.post<Transaction>(`${this.apiUrl}/new-transaction`, transaction);
   }
 
   updateTransaction(id: number, transaction: Transaction): Observable<Transaction> {
-    return this.http.put<Transaction>(`${this.apiUrl}/update`, transaction);
+    return this.http.put<Transaction>(`${this.apiUrl}/update-transaction`, transaction);
   }
 
   deleteTransaction(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/delete/${id}`);
+    return this.http.delete<void>(`${this.apiUrl}/delete-transaction/${id}`);
+  }
+
+  getTotalIncome(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/total-income`);
+  }
+
+  getTotalExpenses(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/total-expense`);
   }
 
 }

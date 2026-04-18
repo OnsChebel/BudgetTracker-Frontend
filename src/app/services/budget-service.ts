@@ -11,20 +11,20 @@ export class BudgetService {
 
   constructor(private http: HttpClient) {}
 
-  getAllBudgets(): Observable<Budget[]>{
-    return this.http.get<Budget[]>(`${this.apiUrl}/allbudgets`);
+  getMyBudgets(): Observable<Budget[]>{
+    return this.http.get<Budget[]>(`${this.apiUrl}/my-budgets`);
   }
 
   createBudget(budget: Budget): Observable<Budget>{
-    return this.http.post<Budget>(`${this.apiUrl}/newbudget`, budget);
+    return this.http.post<Budget>(`${this.apiUrl}/new-budget`, budget);
   }
 
   updateBudget(id: number, budget: Budget): Observable<Budget>{
-    return this.http.put<Budget>(`${this.apiUrl}/updatebudget`, budget);
+    return this.http.put<Budget>(`${this.apiUrl}/update-budget`, budget);
   }
 
   deleteBudget(id: number): Observable<void>{
-    return this.http.delete<void>(`${this.apiUrl}/deletebudget/${id}`);
+    return this.http.delete<void>(`${this.apiUrl}/delete-budget/${id}`);
   }
 
 }

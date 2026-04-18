@@ -5,6 +5,9 @@ import {Transactions} from './components/transactions/transactions';
 import {Categories} from './components/categories/categories';
 import {Dashboard} from './components/dashboard/dashboard';
 import {Login} from './components/login/login';
+import {Loans} from './components/loans/loans';
+import {Profile} from './components/profile/profile';
+import {Signup} from './components/signup/signup';
 
 export const routes: Routes = [
   {
@@ -24,5 +27,14 @@ export const routes: Routes = [
   },
   {
     path:'dashboard', component: Dashboard
+  },
+  {
+    path: 'loans', component: Loans
+  },
+  {
+    path: 'profile', component: Profile
+  },
+  {
+    path: 'signup', component: Signup
   }
 ];

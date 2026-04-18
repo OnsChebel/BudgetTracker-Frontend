@@ -11,19 +11,19 @@ export class CategoryService {
 
   constructor(private http: HttpClient) { }
 
-  getAllCategories(): Observable<Category[]> {
-    return this.http.get<Category[]>(`${this.apiUrl}/allcategories`);
+  getMyCategories(): Observable<Category[]> {
+    return this.http.get<Category[]>(`${this.apiUrl}/my-categories`);
   }
 
   createCategory(category: Category): Observable<Category> {
-    return this.http.post<Category>(`${this.apiUrl}/newcategory`, category);
+    return this.http.post<Category>(`${this.apiUrl}/new-category`, category);
   }
 
   updateCategory(category: Category): Observable<Category> {
-    return this.http.put<Category>(`${this.apiUrl}/updatecategory`, category);
+    return this.http.put<Category>(`${this.apiUrl}/update-category`, category);
   }
 
   deleteCategory(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/delete/${id}`);
+    return this.http.delete<void>(`${this.apiUrl}/delete-category/${id}`);
   }
 }

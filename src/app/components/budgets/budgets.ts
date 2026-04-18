@@ -37,7 +37,7 @@ export class Budgets {
   }
 
   loadBudgets() {
-    this.budgetService.getAllBudgets().subscribe({
+    this.budgetService.getMyBudgets().subscribe({
       next: (data : Budget[])=>{
         this.budgets = data;
         console.log('Data from database:', this.budgets);
@@ -49,7 +49,7 @@ export class Budgets {
   }
 
   loadCategories() {
-    this.categoryService.getAllCategories().subscribe({
+    this.categoryService.getMyCategories().subscribe({
       next: (data) => this.categories = data,
       error: (err) => console.error('Error fetching categories:', err)
     });

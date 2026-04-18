@@ -41,7 +41,7 @@ export class Transactions {
   }
 
   loadTransactions() {
-    this.transactionService.getAllTransactions().subscribe({
+    this.transactionService.getMyTransactions().subscribe({
       next: (data) => {
         this.transactions = data;
         console.log('Data from database:', this.transactions);
@@ -53,14 +53,14 @@ export class Transactions {
   }
 
   loadCategories() {
-    this.categoryService.getAllCategories().subscribe({
+    this.categoryService.getMyCategories().subscribe({
       next: (data) => this.categories = data,
       error: (err) => console.error('Error fetching categories:', err)
     });
   }
 
   loadAccounts() {
-    this.accountService.getAllAccounts().subscribe({
+    this.accountService.getMyAccounts().subscribe({
       next: (data) => this.accounts = data,
       error: (err) => console.error('Error fetching accounts:', err)
     });

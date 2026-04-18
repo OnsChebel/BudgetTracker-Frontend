@@ -1,1 +1,49 @@
-<p>profile works!</p>
+<div class="container mt-5" style="max-width: 700px;">
+  <div class="card shadow border-0 border-top border-primary border-4">
+    <div class="card-header bg-white pt-4 pb-0 border-0">
+      <h3 class="fw-bold text-primary mb-0">My Profile</h3>
+      <p class="text-muted small">Update your personal information</p>
+    </div>
+
+    <div class="card-body p-4">
+
+      @if (successMessage) {
+        <div class="alert alert-success py-2">{{ successMessage }}</div>
+      }
+      @if (errorMessage) {
+        <div class="alert alert-danger py-2">{{ errorMessage }}</div>
+      }
+
+      <form (ngSubmit)="saveProfile()">
+
+        <div class="row g-3 mb-4">
+          <div class="col-md-6">
+            <label class="form-label text-muted small fw-bold">Username</label>
+            <input type="text" class="form-control bg-light" name="username" [(ngModel)]="user.username" disabled>
+            <div class="form-text" style="font-size: 0.75rem;">Username cannot be changed.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label text-muted small fw-bold">Email Address</label>
+            <input type="email" class="form-control" name="email" [(ngModel)]="user.email" required>
+          </div>
+        </div>
+
+        <div class="row g-3 mb-4">
+          <div class="col-md-6">
+            <label class="form-label text-muted small fw-bold">First Name</label>
+            <input type="text" class="form-control" name="firstName" [(ngModel)]="user.firstName">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label text-muted small fw-bold">Last Name</label>
+            <input type="text" class="form-control" name="lastName" [(ngModel)]="user.lastName">
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end mt-4">
+          <button type="submit" class="btn btn-primary px-4 fw-bold shadow-sm">Save Changes</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

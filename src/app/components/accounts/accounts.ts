@@ -34,7 +34,7 @@ export class Accounts {
   }
 
   loadAccounts() : void {
-    this.accountService.getAllAccounts().subscribe({
+    this.accountService.getMyAccounts().subscribe({
       next: (data: Account[]) => {
         this.accounts = data;
         console.log('Data from database', this.accounts);
