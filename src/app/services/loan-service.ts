@@ -8,7 +8,7 @@ import { LoanScheduleRow } from '../models/loan-schedule-row.model';
   providedIn: 'root'
 })
 export class LoanService {
-  private apiUrl = 'http://localhost:8081/loan';
+  private apiUrl = 'http://localhost:8081/loans';
 
   constructor(private http: HttpClient) {}
 
